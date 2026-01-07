@@ -1,0 +1,22 @@
+server:
+  port: 8082
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: service-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 132.226.64.96:8848
+        username: nacos
+        password: nacos
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
