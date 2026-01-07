@@ -1,0 +1,50 @@
+server:
+  port: 8084
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  application:
+    name: service-trade
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 132.226.64.96:8848
+        username: nacos
+        password: nacos
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://132.226.64.96:3306/test1?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true&maxReconnects=3&initialTimeout=10&connectTimeout=60000&socketTimeout=300000&allowPublicKeyRetrieval=true
+    username: 123456
+    password: 123456
+    hikari:
+      connection-timeout: 60000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      connection-test-query: SELECT 1
+      validation-timeout: 3000
+      keepalive-time: 300000
+  data:
+    redis:
+      host: 132.226.64.96
+      port: 6379
+      password: 20041122gooder
+      database: 0
+      timeout: 5000
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
