@@ -24,6 +24,18 @@ public class DevelopmentProject {
 
     private Double estimatedEmissionReduction; // 预计减排量
 
+    private Integer currentStep; // 当前阶段 (0-立项, 1-PDD设计, 2-第三方审定, 3-主管部门备案, 4-减排量核证, 5-资产签发)
+
+    private String currentTask; // 当前任务描述
+
+    private String baselineDescription; // 基准线描述
+
+    private Double actualEmissionReduction; // 实际减排量
+
+    private LocalDateTime startDate; // 项目开始日期
+
+    private LocalDateTime expectedEndDate; // 预计结束日期
+
     private LocalDateTime createTime;
     
     private LocalDateTime updateTime;
