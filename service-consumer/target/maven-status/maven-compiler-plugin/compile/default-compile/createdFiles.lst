@@ -1,0 +1,14 @@
+com\example\consumer\controller\CarbonQuotaController.class
+com\example\consumer\entity\CarbonQuotaDetail.class
+com\example\consumer\controller\UserController.class
+com\example\consumer\entity\CarbonQuota.class
+com\example\consumer\feign\CarbonCreditFeignClient.class
+com\example\consumer\feign\UserFeignClient.class
+com\example\consumer\controller\DashboardController.class
+com\example\consumer\feign\CompanyInfoFeignClient.class
+com\example\consumer\feign\CarbonQuotaFeignClient.class
+com\example\consumer\feign\TradeOrderFeignClient.class
+com\example\consumer\entity\User.class
+com\example\consumer\ConsumerApplication.class
+com\example\consumer\controller\CarbonCreditController.class
+com\example\consumer\entity\CarbonCredit.class

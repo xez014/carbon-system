@@ -1,0 +1,7 @@
+com\example\news\config\MybatisPlusConfig.class
+com\example\news\mapper\NewsMapper.class
+com\example\news\entity\News.class
+com\example\news\service\NewsService.class
+com\example\news\NewsApplication.class
+com\example\news\controller\NewsController.class
+com\example\news\service\impl\NewsServiceImpl.class

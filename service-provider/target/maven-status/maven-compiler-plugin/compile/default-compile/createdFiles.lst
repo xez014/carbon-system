@@ -1,0 +1,9 @@
+com\example\provider\service\CompanyInfoService.class
+com\example\provider\mapper\UserMapper.class
+com\example\provider\service\impl\CompanyInfoServiceImpl.class
+com\example\provider\controller\UserController.class
+com\example\provider\controller\CompanyInfoController.class
+com\example\provider\entity\CompanyInfo.class
+com\example\provider\mapper\CompanyInfoMapper.class
+com\example\provider\entity\User.class
+com\example\provider\ProviderApplication.class
