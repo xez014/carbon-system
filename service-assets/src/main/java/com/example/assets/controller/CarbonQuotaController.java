@@ -1,16 +1,14 @@
 package com.example.assets.controller;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.example.assets.entity.CarbonQuota;
-import com.example.assets.entity.CarbonQuotaDetail;
-import com.example.assets.mapper.CarbonQuotaMapper;
-import com.example.assets.mapper.CarbonQuotaDetailMapper;
+import com.example.common.entity.CarbonQuota;
+import com.example.common.entity.CarbonQuotaDetail;
+import com.example.common.model.Result;
+import com.example.assets.service.CarbonQuotaService;
+import java.math.BigDecimal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * 碳配额管理 - 服务端接口
@@ -20,57 +18,72 @@ import java.util.Map;
 public class CarbonQuotaController {
 
     @Autowired
-    private CarbonQuotaMapper carbonQuotaMapper;
-
-    @Autowired
-    private CarbonQuotaDetailMapper carbonQuotaDetailMapper;
+    private CarbonQuotaService carbonQuotaService;
 
     /**
      * 获取指定年份的配额信息
      */
     @GetMapping("/get")
-    public CarbonQuota getQuota(@RequestParam Long userId, @RequestParam Integer year) {
-        QueryWrapper<CarbonQuota> query = new QueryWrapper<>();
-        query.eq("user_id", userId);
-        query.eq("year", year);
-        return carbonQuotaMapper.selectOne(query);
+    public Result<CarbonQuota> getQuota(@RequestParam Long userId, @RequestParam Integer year) {
+        CarbonQuota quota = carbonQuotaService.getQuotaByUserIdAndYear(userId, year);
+        return Result.success(quota);
     }
     
     /**
      * 获取用户所有年份的配额列表
      */
     @GetMapping("/list")
-    public List<CarbonQuota> listQuotas(@RequestParam Long userId) {
-        QueryWrapper<CarbonQuota> query = new QueryWrapper<>();
-        query.eq("user_id", userId);
-        query.orderByDesc("year");
-        return carbonQuotaMapper.selectList(query);
+    public Result<List<CarbonQuota>> listQuotas(@RequestParam Long userId) {
+        List<CarbonQuota> quotas = carbonQuotaService.listQuotasByUserId(userId);
+        return Result.success(quotas);
     }
 
     /**
      * 获取配额明细
      */
     @GetMapping("/detail/list")
-    public List<CarbonQuotaDetail> listQuotaDetails(@RequestParam Long quotaId) {
-        QueryWrapper<CarbonQuotaDetail> query = new QueryWrapper<>();
-        query.eq("quota_id", quotaId);
-        query.orderByDesc("change_date");
-        return carbonQuotaDetailMapper.selectList(query);
+    public Result<List<CarbonQuotaDetail>> listQuotaDetails(@RequestParam Long quotaId) {
+        List<CarbonQuotaDetail> details = carbonQuotaService.listQuotaDetails(quotaId);
+        return Result.success(details);
     }
 
     /**
-     * 新增或更新配额 (用于模拟数据)
+     * 新增配额
      */
-    @PostMapping("/save")
-    public Map<String, Object> saveQuota(@RequestBody CarbonQuota quota) {
-        Map<String, Object> result = new HashMap<>();
-        if (quota.getId() == null) {
-            carbonQuotaMapper.insert(quota);
-        } else {
-            carbonQuotaMapper.updateById(quota);
-        }
-        result.put("success", true);
-        result.put("data", quota);
-        return result;
+    @PostMapping("/add")
+    public Result<CarbonQuota> addQuota(@RequestBody CarbonQuota quota) {
+        CarbonQuota addedQuota = carbonQuotaService.addQuota(quota);
+        return Result.success("配额新增成功", addedQuota);
+    }
+
+    /**
+     * 更新配额
+     */
+    @PutMapping("/update")
+    public Result<CarbonQuota> updateQuota(@RequestBody CarbonQuota quota) {
+        CarbonQuota updatedQuota = carbonQuotaService.updateQuota(quota);
+        return Result.success("配额更新成功", updatedQuota);
+    }
+
+    /**
+     * 调整配额
+     */
+    @PostMapping("/adjust")
+    public Result<CarbonQuota> adjustQuota(@RequestParam Long quotaId, 
+                                         @RequestParam BigDecimal amount,
+                                         @RequestParam String type,
+                                         @RequestParam(required = false) String remark) {
+        CarbonQuota adjustedQuota = carbonQuotaService.adjustQuota(quotaId, amount, type, remark);
+        return Result.success("配额调整成功", adjustedQuota);
+    }
+
+    /**
+     * 履行配额
+     */
+    @PostMapping("/fulfill")
+    public Result<CarbonQuota> fulfillQuota(@RequestParam Long quotaId, 
+                                          @RequestParam BigDecimal verifiedEmission) {
+        CarbonQuota fulfilledQuota = carbonQuotaService.fulfillQuota(quotaId, verifiedEmission);
+        return Result.success("配额履约成功", fulfilledQuota);
     }
 }

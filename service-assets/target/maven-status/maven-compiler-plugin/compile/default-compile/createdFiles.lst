@@ -1,9 +1,10 @@
 com\example\assets\mapper\CarbonCreditMapper.class
 com\example\assets\controller\CarbonQuotaController.class
 com\example\assets\mapper\CarbonQuotaMapper.class
+com\example\assets\exception\GlobalExceptionHandler.class
 com\example\assets\mapper\CarbonQuotaDetailMapper.class
-com\example\assets\entity\CarbonQuotaDetail.class
 com\example\assets\entity\CarbonCredit.class
 com\example\assets\AssetsApplication.class
-com\example\assets\entity\CarbonQuota.class
+com\example\assets\service\impl\CarbonQuotaServiceImpl.class
 com\example\assets\controller\CarbonCreditController.class
+com\example\assets\service\CarbonQuotaService.class

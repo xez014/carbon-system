@@ -1,1 +1,6 @@
+D:\code\carbon-system\carbon-common\src\main\java\com\example\common\entity\CarbonQuota.java
+D:\code\carbon-system\carbon-common\src\main\java\com\example\common\entity\CarbonQuotaDetail.java
+D:\code\carbon-system\carbon-common\src\main\java\com\example\common\exception\CarbonQuotaAdjustmentException.java
+D:\code\carbon-system\carbon-common\src\main\java\com\example\common\exception\CarbonQuotaFulfillmentException.java
+D:\code\carbon-system\carbon-common\src\main\java\com\example\common\exception\CarbonQuotaNotFoundException.java
 D:\code\carbon-system\carbon-common\src\main\java\com\example\common\model\Result.java
