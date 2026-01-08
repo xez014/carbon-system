@@ -10,9 +10,9 @@
         class="el-menu-vertical"
         router
         :collapse="isCollapse"
-        background-color="#304156"
+        background-color="var(--layout-sidebar-bg)"
         text-color="#bfcbd9"
-        active-text-color="#409EFF"
+        active-text-color="var(--el-color-primary)"
       >
         <template v-for="route in accessRoutes" :key="route.path">
            <!-- Single menu item (no children) -->
@@ -132,7 +132,7 @@ const logout = () => {
   height: 100vh;
 }
 .aside {
-  background-color: #304156;
+  background-color: var(--layout-sidebar-bg);
   color: #fff;
   transition: width 0.3s;
   overflow-x: hidden;
@@ -142,7 +142,7 @@ const logout = () => {
   line-height: 60px;
   text-align: center;
   color: #fff;
-  background-color: #2b2f3a;
+  background-color: var(--layout-sidebar-active-bg);
   font-size: 20px;
   font-weight: bold;
   display: flex;
@@ -153,7 +153,7 @@ const logout = () => {
 .logo-icon {
   margin-right: 10px;
   font-size: 24px;
-  color: #409EFF;
+  color: var(--el-color-primary);
 }
 .el-menu-vertical {
   border-right: none;
@@ -162,8 +162,8 @@ const logout = () => {
   flex-direction: column;
 }
 .header {
-  background-color: #fff;
-  border-bottom: 1px solid #dcdfe6;
+  background-color: var(--layout-header-bg);
+  border-bottom: 1px solid var(--border-primary);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -188,16 +188,16 @@ const logout = () => {
   font-size: 20px;
   margin-right: 20px;
   cursor: pointer;
-  color: #5a5e66;
+  color: var(--text-secondary);
 }
-.header-icon:hover { color: #409EFF; }
+.header-icon:hover { color: var(--el-color-primary); }
 
 .avatar-dropdown { cursor: pointer; }
 .el-dropdown-link { display: flex; align-items: center; }
 .username { margin: 0 8px; font-weight: 500; }
 
 .main {
-  background-color: #f0f2f5;
+  background-color: var(--layout-main-bg);
   padding: 20px;
   overflow-y: auto;
 }

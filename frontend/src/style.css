@@ -1,6 +1,46 @@
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --el-color-primary: #409eff;
+  
+  /* 环保主题配色 - 蓝色系 */
+  --el-color-primary: #00A8E8; /* 主色调 - 海洋蓝 */
+  --el-color-primary-light-3: #33B8FF;
+  --el-color-primary-light-5: #66C8FF;
+  --el-color-primary-light-7: #99D8FF;
+  --el-color-primary-light-8: #CCE8FF;
+  --el-color-primary-light-9: #F0F8FF;
+  
+  /* 环保主题配色 - 绿色系 */
+  --el-color-success: #2ECC71; /* 成功色 - 环保绿 */
+  --el-color-success-light-3: #5FD391;
+  --el-color-success-light-5: #8FE9B1;
+  --el-color-success-light-7: #BFFFC1;
+  --el-color-success-light-8: #DFFFD1;
+  --el-color-success-light-9: #F0FFF1;
+  
+  /* 辅助颜色 */
+  --el-color-info: #00C8C8; /* 信息色 - 青绿色 */
+  --el-color-warning: #FFA500; /* 警告色 - 暖橙色 */
+  --el-color-danger: #FF6B6B; /* 危险色 - 珊瑚红 */
+  
+  /* 背景色 */
+  --bg-primary: #F0F8F5; /* 主背景 - 浅绿蓝 */
+  --bg-secondary: #E6F4EE; /* 次背景 - 浅绿色 */
+  --bg-tertiary: #E6F5FA; /* 三级背景 - 浅蓝色 */
+  
+  /* 文本颜色 */
+  --text-primary: #2D3748; /* 主文本 - 深灰色 */
+  --text-secondary: #718096; /* 次文本 - 中灰色 */
+  --text-light: #A0AEC0; /* 浅色文本 */
+  
+  /* 边框颜色 */
+  --border-primary: #E2E8F0; /* 主边框 */
+  --border-secondary: #CBD5E0; /* 次边框 */
+  
+  /* 布局颜色 */
+  --layout-sidebar-bg: #1A365D; /* 侧边栏背景 */
+  --layout-sidebar-active-bg: #2B6CB0; /* 侧边栏激活项背景 */
+  --layout-header-bg: #FFFFFF; /* 头部背景 */
+  --layout-main-bg: #F0F8F5; /* 主内容背景 */
 }
 
 html, body {

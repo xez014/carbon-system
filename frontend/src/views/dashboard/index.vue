@@ -247,7 +247,7 @@ const initChart = () => {
         type: 'bar',
         data: [820000, 932000, 901000, 934000, 1290000, 1330000, 1320000],
         itemStyle: {
-          color: '#36d1dc'
+          color: '#00A8E8'
         }
       },
       {
@@ -255,7 +255,7 @@ const initChart = () => {
         type: 'bar',
         data: [45000, 52000, 48000, 50000, 60000, 55000, 58000],
         itemStyle: {
-          color: '#42e695'
+          color: '#2ECC71'
         }
       },
       {
@@ -264,7 +264,7 @@ const initChart = () => {
         yAxisIndex: 1,
         data: [150, 230, 224, 218, 350, 380, 420],
         itemStyle: {
-          color: '#f09819'
+          color: '#FFA500'
         },
         lineStyle: {
           width: 3
@@ -300,10 +300,10 @@ const initChart = () => {
 .data-card:hover { transform: translateY(-5px); }
 .data-card.clickable { cursor: pointer; }
 .data-card.clickable:active { transform: translateY(-3px); }
-.card-blue { background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%); }
-.card-green { background: linear-gradient(135deg, #42e695 0%, #3bb2b8 100%); }
-.card-orange { background: linear-gradient(135deg, #f09819 0%, #edde5d 100%); }
-.card-red { background: linear-gradient(135deg, #ff512f 0%, #dd2476 100%); }
+.card-blue { background: linear-gradient(135deg, #00A8E8 0%, #2B6CB0 100%); }
+.card-green { background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%); }
+.card-orange { background: linear-gradient(135deg, #FFA500 0%, #F39C12 100%); }
+.card-red { background: linear-gradient(135deg, #FF6B6B 0%, #EE5A24 100%); }
 
 .card-content { display: flex; align-items: center; }
 .icon-wrapper { 
