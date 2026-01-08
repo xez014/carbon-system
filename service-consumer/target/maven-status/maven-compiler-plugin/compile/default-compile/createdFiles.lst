@@ -1,7 +1,5 @@
 com\example\consumer\controller\CarbonQuotaController.class
-com\example\consumer\entity\CarbonQuotaDetail.class
 com\example\consumer\controller\UserController.class
-com\example\consumer\entity\CarbonQuota.class
 com\example\consumer\feign\CarbonCreditFeignClient.class
 com\example\consumer\feign\UserFeignClient.class
 com\example\consumer\controller\DashboardController.class

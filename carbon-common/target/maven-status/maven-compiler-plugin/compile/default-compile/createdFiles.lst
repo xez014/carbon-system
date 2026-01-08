@@ -1,1 +1,6 @@
 com\example\common\model\Result.class
+com\example\common\entity\CarbonQuotaDetail.class
+com\example\common\exception\CarbonQuotaAdjustmentException.class
+com\example\common\exception\CarbonQuotaFulfillmentException.class
+com\example\common\exception\CarbonQuotaNotFoundException.class
+com\example\common\entity\CarbonQuota.class

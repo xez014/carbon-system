@@ -4,8 +4,6 @@ D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\contro
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\controller\DashboardController.java
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\controller\UserController.java
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\entity\CarbonCredit.java
-D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\entity\CarbonQuota.java
-D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\entity\CarbonQuotaDetail.java
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\entity\User.java
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\feign\CarbonCreditFeignClient.java
 D:\code\carbon-system\service-consumer\src\main\java\com\example\consumer\feign\CarbonQuotaFeignClient.java

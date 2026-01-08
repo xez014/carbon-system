@@ -1,7 +1,7 @@
 package com.example.consumer.controller;
 
 import com.example.common.model.Result;
-import com.example.consumer.entity.CarbonQuota;
+import com.example.common.entity.CarbonQuota;
 import com.example.consumer.entity.CarbonCredit;
 import com.example.consumer.feign.UserFeignClient;
 import com.example.consumer.feign.CompanyInfoFeignClient;
@@ -68,9 +68,9 @@ public class DashboardController {
             
             // 调用碳配额服务获取用户配额列表
             try {
-                List<CarbonQuota> quotas = carbonQuotaFeignClient.listQuotas(userId);
-                if (quotas != null && !quotas.isEmpty()) {
-                    totalQuota = quotas.stream()
+                Result<List<CarbonQuota>> quotaResult = carbonQuotaFeignClient.listQuotas(userId);
+                if (quotaResult != null && quotaResult.getData() != null && !quotaResult.getData().isEmpty()) {
+                    totalQuota = quotaResult.getData().stream()
                             .map(CarbonQuota::getTotalQuota) // 使用正确的getTotalQuota方法
                             .filter(quota -> quota != null) // 过滤空值
                             .mapToLong(BigDecimal::longValue) // 转换为long类型
@@ -124,9 +124,9 @@ public class DashboardController {
         try {
             // 1. 用户持有的碳配额
             try {
-                List<CarbonQuota> quotas = carbonQuotaFeignClient.listQuotas(userId);
-                if (quotas != null && !quotas.isEmpty()) {
-                    Long totalQuota = quotas.stream()
+                Result<List<CarbonQuota>> quotaResult = carbonQuotaFeignClient.listQuotas(userId);
+                if (quotaResult != null && quotaResult.getData() != null && !quotaResult.getData().isEmpty()) {
+                    Long totalQuota = quotaResult.getData().stream()
                             .map(CarbonQuota::getTotalQuota)
                             .filter(quota -> quota != null)
                             .mapToLong(BigDecimal::longValue)
