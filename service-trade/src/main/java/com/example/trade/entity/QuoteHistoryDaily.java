@@ -1,0 +1,35 @@
+package com.example.trade.entity;
+
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import lombok.Data;
+
+@Data
+@TableName("quote_history_daily")
+public class QuoteHistoryDaily {
+    @TableId(type = IdType.AUTO)
+    private Long id;
+
+    private String assetType; // 资产类型：QUOTA-配额，CREDIT-信用
+
+    private LocalDate date; // 日期
+
+    private BigDecimal openPrice; // 开盘价
+
+    private BigDecimal closePrice; // 收盘价
+
+    private BigDecimal highPrice; // 最高价
+
+    private BigDecimal lowPrice; // 最低价
+
+    private BigDecimal volume; // 成交量（吨）
+
+    private BigDecimal amount; // 成交额（元）
+
+    private BigDecimal change; // 涨跌额
+
+    private BigDecimal changeRate; // 涨跌幅
+}

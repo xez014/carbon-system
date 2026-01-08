@@ -63,4 +63,19 @@ public class TradeOrderController {
         queryWrapper.orderByDesc(TradeOrder::getCreateTime);
         return Result.success(tradeOrderService.page(pageParam, queryWrapper));
     }
+
+    // 取消订单
+    @PostMapping("/cancel/{orderId}")
+    public Result<Boolean> cancelOrder(@PathVariable Long orderId) {
+        TradeOrder order = tradeOrderService.getById(orderId);
+        if (order == null) {
+            return Result.error("订单不存在");
+        }
+        if (!"OPEN".equals(order.getStatus())) {
+            return Result.error("只有挂单中的订单才能取消");
+        }
+        
+        order.setStatus("CANCELLED");
+        return Result.success(tradeOrderService.updateById(order));
+    }
 }
